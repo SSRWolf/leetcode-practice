@@ -4,10 +4,24 @@
 样例输入：numbers = [2, 7, 11, 15]; target = 9
 样例结果：[1, 2]
 请先独立完成；这里没有预填解法。
+cd E:\postgraduate\leetCode
+
+git add .
+git commit -m "Complete Day 10"
+git push
 """
 
 
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
         # 在这里写你的解法
-        pass
+        left  = 0
+        right = len(numbers)-1
+        while left<right:
+            if numbers[left]+numbers[right]>target:
+                right-=1
+            elif numbers[left]+numbers[right]<target:
+                left+=1
+            else:
+                return [left+1,right+1]
+        return []

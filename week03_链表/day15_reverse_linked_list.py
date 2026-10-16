@@ -7,11 +7,21 @@
 请先独立写解法。下面仅给出题目入口，不包含答案。
 """
 
-from __future__ import annotations
-
-# LeetCode 运行环境提供 ListNode 节点类。
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 class Solution:
-    def reverseList(self, head: ListNode | None) -> ListNode | None:
-        # 在这里写你的解法
-        pass
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # 在这里写你的代码
+        pre = None
+        curr = head
+        save = None
+        while curr:
+            save = curr.next        
+            curr.next = pre         
+            pre = curr
+            curr = save
+        return pre

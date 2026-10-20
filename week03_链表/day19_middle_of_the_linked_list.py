@@ -10,8 +10,36 @@
 from __future__ import annotations
 
 # LeetCode 运行环境提供 ListNode 节点类。
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
+#先找链表长度
 class Solution:
     def middleNode(self, head: ListNode | None) -> ListNode | None:
-        # 在这里写你的解法
-        pass
+        p = head
+        length = 0
+        count = 0
+        while p:
+            length += 1
+            p = p.next
+        p = head
+        while count<(length//2) and p:
+            count += 1
+            p = p.next
+        return p
+
+#快慢指针：快走两步，慢走一步，当快指针走到结尾，慢指针刚好在中间
+class Solution2:
+    def middleNode(self, head: ListNode | None) -> ListNode | None:
+        fast = head
+        slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
+        return slow
+
+
+    

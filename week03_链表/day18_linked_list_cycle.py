@@ -10,8 +10,19 @@
 from __future__ import annotations
 
 # LeetCode 运行环境提供 ListNode 节点类。
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 class Solution:
     def hasCycle(self, head: ListNode | None) -> bool:
-        # 在这里写你的解法
-        pass
+        fast = head 
+        slow = head
+        while slow and fast and fast.next:           
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
+            

@@ -15,7 +15,6 @@
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # 在这里写你的代码
         pre = None
         curr = head
         save = None

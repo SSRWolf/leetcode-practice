@@ -11,5 +11,29 @@ from __future__ import annotations
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        # 在这里写你的解法
-        pass
+        stack = []
+        for i in range(len(s)):
+            if s[i] in "([{": 
+                stack.append(s[i])
+            if  stack:
+                if s[i] == ")" : 
+                    if stack[-1] == "(":
+                        stack.pop()
+                    else:
+                        return False
+                if s[i] =="]":
+                    if stack[-1] == "[":
+                        stack.pop()
+                    else:
+                        return False
+                if s[i] =="}":
+                    if stack[-1] == "{":
+                        stack.pop()
+                    else:
+                        return False
+            else:
+                return False
+        if not stack:
+            return True
+        else:
+            return False

@@ -10,8 +10,27 @@
 from __future__ import annotations
 
 # LeetCode 运行环境提供 ListNode 节点类。
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
+#思路是fast比slow多走n步，fast到末尾时slow到倒数第n个节点的前一个节点
+#注意slow指向要删除节点的前一个节点，因此如果要删除的是头结点，需要一个虚拟节点在头结点之前
 class Solution:
-    def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
-        # 在这里写你的解法
-        pass
+    def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:        
+        dummy = ListNode(0)
+        dummy.next = head
+        slow = dummy
+        fast = dummy
+        while n+1>0 and fast:
+            fast = fast.next
+            n-=1
+        while fast:
+            slow = slow.next
+            fast = fast.next
+        if slow:
+            delete = slow.next
+            slow.next = delete.next
+        
+        return dummy.next

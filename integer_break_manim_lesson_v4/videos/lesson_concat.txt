@@ -1,0 +1,8 @@
+file 'Opening.mp4'
+file 'BruteLesson.mp4'
+file 'GreedyReason.mp4'
+file 'GreedyLesson.mp4'
+file 'DPLesson.mp4'
+file 'DivideLesson.mp4'
+file 'TreeComparison.mp4'
+file 'ComplexitySummary.mp4'

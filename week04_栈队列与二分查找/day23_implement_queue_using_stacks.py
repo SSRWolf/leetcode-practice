@@ -11,17 +11,45 @@ from __future__ import annotations
 
 class MyQueue:
     def __init__(self):
-        # 初始化队列
+        # 初始化队列    
+        self.stack_in = []
+        self.stack_out = []
         pass
 
     def push(self, x: int) -> None:
+        self.stack_in.append(x)
         pass
 
     def pop(self) -> int:
-        pass
+        if not self.stack_out:
+            while self.stack_in:
+                x = self.stack_in[-1]
+                self.stack_out.append(x)
+                self.stack_in.pop()
+        if self.stack_out:
+            y = self.stack_out[-1]
+            self.stack_out.pop()
+        return y
+
 
     def peek(self) -> int:
-        pass
+        if not self.stack_out:
+            while self.stack_in:
+                self.stack_out.append(self.stack_in.pop())
+
+        return self.stack_out[-1]
 
     def empty(self) -> bool:
-        pass
+        if not self.stack_in and not self.stack_out:
+            return True
+        return False
+q = MyQueue()
+q.push(1)
+q.push(2)
+
+print(q.peek())   # 1
+print(q.pop())    # 1
+print(q.peek())   # 2
+print(q.empty())  # False
+print(q.pop())    # 2
+print(q.empty())  # True

@@ -1,0 +1,44 @@
+D:\Python\Python312\Lib\site-packages\pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+
+0it [00:00, ?it/s]
+ManimGL [32mv1.7.2[0m
+DPLesson.mp4                            : : 0it [00:00, ?it/s]Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Python\Python312\Scripts\manimgl.exe\__main__.py", line 7, in <module>
+  File "E:\postgraduate\leetCode\manim\manimlib\__main__.py", line 61, in main
+    run_scenes()
+  File "E:\postgraduate\leetCode\manim\manimlib\__main__.py", line 39, in run_scenes
+    scene.run()
+  File "E:\postgraduate\leetCode\manim\manimlib\scene\scene.py", line 157, in run
+    self.construct()
+  File "E:\postgraduate\leetCode\integer_break_manim_lesson_v4\lesson_animation.py", line 113, in construct
+    self.cards('整数拆分：先看思路，再看代码',[
+  File "E:\postgraduate\leetCode\integer_break_manim_lesson_v4\lesson_animation.py", line 49, in cards
+    heading=text(title,37).move_to([0,3.35,0]);self.add(heading)
+            ^^^^^^^^^^^^^^
+  File "E:\postgraduate\leetCode\integer_break_manim_lesson_v4\lesson_animation.py", line 11, in text
+    t=Text(str(s) or ' ',font=FONT,font_size=size).set_color(color)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\postgraduate\leetCode\manim\manimlib\mobject\svg\text_mobject.py", line 412, in __init__
+    super().__init__(
+  File "E:\postgraduate\leetCode\manim\manimlib\mobject\svg\text_mobject.py", line 191, in __init__
+    super().__init__(text, height=height, **kwargs)
+  File "E:\postgraduate\leetCode\manim\manimlib\mobject\svg\string_mobject.py", line 69, in __init__
+    svg_string = self.get_svg_string()
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\postgraduate\leetCode\manim\manimlib\mobject\svg\string_mobject.py", line 81, in get_svg_string
+    return self.get_svg_string_by_content(content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\postgraduate\leetCode\manim\manimlib\mobject\svg\text_mobject.py", line 207, in get_svg_string_by_content
+    return markup_to_svg(
+           ^^^^^^^^^^^^^^
+  File "E:\postgraduate\leetCode\manim\manimlib\utils\cache.py", line 27, in wrapper
+    value = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\postgraduate\leetCode\manim\manimlib\mobject\svg\text_mobject.py", line 99, in markup_to_svg
+    os.remove(temp_file)
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\16793\\AppData\\Local\\Temp\\46d7224afcff6427.svg'
+
+                                                              

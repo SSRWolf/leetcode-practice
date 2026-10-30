@@ -1,0 +1,20 @@
+directories:
+  base: 'E:/postgraduate/leetCode/integer_break_manim_lesson_v4'
+  cache: 'E:/postgraduate/leetCode/integer_break_manim_lesson_v4/cache_algorithms'
+  temporary_storage: 'E:/postgraduate/leetCode/integer_break_manim_lesson_v4/temp_algorithms'
+  subdirs:
+    output: 'videos'
+camera:
+  resolution: (1280, 720)
+  fps: 15
+  background_color: '#101827'
+file_writer:
+  ffmpeg_bin: 'D:/视频下载器/4K Video Downloader Subscribe/ffmpeg-x64.exe'
+text:
+  font: 'Microsoft YaHei'
+
+
+
+
+
+

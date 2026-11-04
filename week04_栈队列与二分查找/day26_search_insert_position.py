@@ -12,4 +12,14 @@ from __future__ import annotations
 class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
         # 在这里写你的解法
-        pass
+        low = 0
+        high = len(nums)-1
+        while high>=low:
+            mid = (high+low)//2
+            if nums[mid]>target:
+                high = mid-1
+            elif nums[mid]<target:
+                low = mid+1
+            else:
+                return mid
+        return low

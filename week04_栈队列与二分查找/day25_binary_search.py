@@ -12,4 +12,14 @@ from __future__ import annotations
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
         # 在这里写你的解法
-        pass
+        low = 0
+        high = len(nums)-1
+        while high>=low:
+            mid = int(low + high)//2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid]>target:
+                high = mid-1
+            else:
+                low = mid+1
+        return -1

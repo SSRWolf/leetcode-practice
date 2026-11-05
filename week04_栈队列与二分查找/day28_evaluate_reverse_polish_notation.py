@@ -11,5 +11,35 @@ from __future__ import annotations
 
 class Solution:
     def evalRPN(self, tokens: list[str]) -> int:
-        # 在这里写你的解法
-        pass
+        i=0
+        stack = []
+        ans = 0
+        while i<len(tokens):
+            if not tokens[i] in ["+","-","*","/"]: 
+                stack.append(int(tokens[i]))
+            else:
+                if tokens[i]=="+":
+                    right = stack.pop()
+                    left = stack.pop()
+                    ans = left+right
+                    stack.append(ans)
+                elif tokens[i] == "-":
+                    right = stack.pop()
+                    left = stack.pop()
+                    ans = left-right
+                    stack.append(ans)
+                elif tokens[i] == "*": 
+                    right = stack.pop()
+                    left = stack.pop()
+                    ans = left*right 
+                    stack.append(ans) 
+                elif tokens[i] == "/": 
+                    right = stack.pop()
+                    left = stack.pop() 
+                    ans = abs(left)//abs(right)
+                    if (left<0) != (right<0):
+                        stack.append(-ans)   
+                    else:
+                        stack.append(ans)
+            i+=1
+        return stack[-1]
